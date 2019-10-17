@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Paranormal Encounter </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div>
+        <h5> New User? </h5>
+      </div>
+      <form>
+        <input type="email" name="credentials[email]" placeholder="Enter Email">
+        <input type="password" name="credentials[password]"
+        placeholder="Enter Password">
+        <input type="password" name="credentials[password_confirmation]"
+        placeholder="Enter Password Again">
+        <button>Sign Up!</button>
+        <br>
+        <!-- <button>Sign Up!</button>  This will be sign up modal-->
+      </form>
+      <!--sign in-->
+      <div>
+        <h5> Returning User? </h5>
+      </div>
+        <form>
+          <input class="sign-in-start" type="email" name="credentials[email]" placeholder="Enter Email">
+          <input class="sign-in-start" type="password" name="credentials[password]"
+          placeholder="Enter Password">
+          <br>
+          <button>Sign In!</button>
+        </form>
+        <!-- <button>Click Here to Sign In!</button> This will be sign in modal-->
+        <!--change password-->
+        <div>
+          <h5> Change Password </h5>
+        </div>
+        <form>
+          <input type="password" name="passwords[old]"
+          placeholder="Enter Old Password">
+          <input type="password" name="passwords[new]"
+          placeholder="Enter New Password">
+          <button type="submit">Change Password!</button>
+          <button type="button" class="cancel">Cancel</button>
+        </form>
+        <!-- <button>Click here to change Password!</button> This will be for change password modal-->
+        <!--sign out-->
+        <div>
+          <h5> Sign Out </h5>
+        </div>
+        <form class="sign-out">
+          <button>Sign Out!</button>
+        </form>
+        <!--Message Box-->
+        <div>
+          <div id="auth_message"></div>
+        </div>
+    </body>
+</html>

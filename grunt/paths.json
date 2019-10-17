@@ -1,0 +1,30 @@
+{
+  "src": {
+    "all": [
+      "assets/**/*.js",
+      "grunt/**/*.js",
+      "lib/**/*.js",
+      "Gruntfile.js"
+    ]
+  },
+
+  "grunt": {
+    "all": [
+      "Gruntfile.js",
+      "grunt/*.js"
+    ]
+  },
+
+  "json": {
+    "all": [
+      "assets/scripts/**/*.json",
+      "grunt/*.json"
+    ]
+  },
+
+  "sass": {
+    "all": [
+      "assets/styles/**/*.scss"
+    ]
+  }
+}
