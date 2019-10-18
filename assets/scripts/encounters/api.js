@@ -38,7 +38,7 @@ const showEncounter = function (formData) {
     //   id: '',
     //   cell: [],
     //   over: ''
-    }
+    // }
   })
 }
 

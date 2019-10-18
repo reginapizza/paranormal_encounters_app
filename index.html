@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Paranormal Encounter </title>
+      <title>Paranormal Encounters </title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,78 +12,86 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div>
-        <h5> New User? </h5>
-      </div>
-      <form class='sign-up'>
-        <input type="email" name="credentials[email]" placeholder="Enter Email">
-        <input type="password" name="credentials[password]"
-        placeholder="Enter Password">
-        <input type="password" name="credentials[password_confirmation]"
-        placeholder="Enter Password Again">
-        <button>Sign Up!</button>
-        <br>
-        <!-- <button>Sign Up!</button>  This will be sign up modal-->
-      </form>
-      <!--sign in-->
-      <div>
-        <h5> Returning User? </h5>
-      </div>
-        <form class="sign-in">
-          <input class="sign-in-start" type="email" name="credentials[email]" placeholder="Enter Email">
-          <input class="sign-in-start" type="password" name="credentials[password]"
-          placeholder="Enter Password">
-          <br>
-          <button>Sign In!</button>
-        </form>
-        <!-- <button>Click Here to Sign In!</button> This will be sign in modal-->
-        <!--change password-->
-        <div>
-          <h5> Change Password </h5>
-        </div>
-        <form class="change-password">
-          <input type="password" name="passwords[old]"
-          placeholder="Enter Old Password">
-          <input type="password" name="passwords[new]"
-          placeholder="Enter New Password">
-          <button type="submit">Change Password!</button>
-          <!-- <button type="button" class="cancel">Cancel</button> -->
-        </form>
-        <!-- <button>Click here to change Password!</button> This will be for change password modal-->
-        <!--sign out-->
-        <div>
-          <h5> Sign Out </h5>
-        </div>
-        <form class="sign-out">
-          <button>Sign Out!</button>
-        </form>
-        <!--Message Box-->
-        <div>
-          <div id="auth_message"></div>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-          Launch demo modal
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
+      <div class="container">
 
+        <div class="row">
+          <h1 class="title col-12">Paranormal Encounters</h1>
+        </div>
+
+        <div class="row">
+          <div class="auth col-12 col-lg-3 panel">
+            <div class="sign-up">
+              <h5> New User? </h5>
+            </div>
+            <form class='sign-up'>
+              <input type="email" name="credentials[email]" placeholder="Enter Email">
+              <input type="password" name="credentials[password]"
+              placeholder="Enter Password">
+              <input type="password" name="credentials[password_confirmation]"
+              placeholder="Enter Password Again">
+              <button>Sign Up!</button>
+              <br>
+            </form>
+            <!--sign in-->
+            <div>
+              <h5> Returning User? </h5>
+            </div class="sign-in">
+              <form class="sign-in">
+                <input class="sign-in-start" type="email" name="credentials[email]" placeholder="Enter Email">
+                <input class="sign-in-start" type="password" name="credentials[password]"
+                placeholder="Enter Password">
+                <br>
+                <button>Sign In!</button>
+              </form>
+              <!--change password-->
+              <div class="change-password">
+                <h5> Change Password </h5>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+              <form class="change-password">
+                <input type="password" name="passwords[old]"
+                placeholder="Enter Old Password">
+                <input type="password" name="passwords[new]"
+                placeholder="Enter New Password">
+                <button type="submit">Change Password!</button>
+                <!-- <button type="button" class="cancel">Cancel</button> -->
+              </form>
+              <!--sign out-->
+              <div class="sign-out">
+                <h5> Sign Out </h5>
+              </div>
+              <form class="sign-out">
+                <button>Sign Out!</button>
+              </form>
+              <!--Message Box-->
+              <div>
+                <div id="auth_message"></div>
+              </div>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Launch demo modal
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </div> <!--ends container-->
     </body>
 </html>
