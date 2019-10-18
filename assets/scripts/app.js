@@ -1,6 +1,7 @@
 'use strict'
 
 const authEvents = require('./auth/events.js')
+const encounterEvents = require('./encounters/events.js')
 
 $(() => {
   $('.sign-up').on('submit', authEvents.onSignUp)
@@ -10,4 +11,6 @@ $(() => {
   $('.change-password').on('submit', authEvents.onChangePassword)
   $('.cancel').on('click', authEvents.onCancelButton)
   $('.sign-out').on('submit', authEvents.onSignOut)
+  $('#myModal').on('shown.bs.modal', encounterEvents.onModalClick)
+  $('#submit-encounter').on('submit', encounterEvents.onSubmitEncounter)
 })

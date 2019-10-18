@@ -6,6 +6,7 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -67,25 +68,75 @@
                 <div id="auth_message"></div>
               </div>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Launch demo modal
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Had an Encounter? Click here to log it now!
               </button>
               <!-- Modal -->
-              <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                      <h5 class="modal-title" id="modalTitle">My Encounter</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-
+                      <h5 class="form-title"> Encounter Setting: </h5>
+                      <form id="encounter-info">
+                        Date of the Encounter: <span class="required field">*</span> <input type="date" name="Date of Encounter" placeholder="YYY/MM/DD"><br/>
+                        Approximate Time of the Encounter: <span class="required field">*</span> <input type="time" name="Approximate Time of Encounter" placehold="hh:mm:ss"><br/>
+                        Location: <span class="required field">*</span> <input type="text" name="location" placeholder="Ex: Whaley House, San Diego, CA"><br/>
+                        Weather During Encounter: <select name="weather">
+                          <option value="Sunny">Sunny</option>
+                          <option value="Cloudy">Cloudy</option>
+                          <option value="Rainy">Rainy</option>
+                          <option value="Snowing">Snowing</option>
+                          <option value="Stormy">Stormy</option>
+                        </select> </br>
+                        Number of People: <input type="number" min="0" step="1" placeholder="include yourself!"><br/>
+                        What You Were Wearing:<input type="text" name="wearing" placeholder="Ex: Red shirt and blue jeans."><br/>
+                        <br>
+                        <h5> About the Entity: </h5>
+                        Entity Type:<span class="required field">*</span> <select name="entity-type">
+                          <option value="Apparition">Apparition</option>
+                          <option value="Ghost">Ghost</option>
+                          <option value="Poltergeist">Poltergeist</option>
+                          <option value="Demon">Demon</option>
+                          <option value="Cryptid">Cryptid</option>
+                          <option value="Alien">Alien</option>
+                        </select><br/>
+                        Entity Name: <input type="text" name="entity-name" placeholder="Ex: Yankee Jim"><br/>
+                        Personality: <select name="personality">
+                          <option value="Friendly">Friendly</option>
+                          <option value="Playful">Playful</option>
+                          <option value="Good">Good</option>
+                          <option value="Reserved">Reserved</option>
+                          <option value="Serious">Serious</option>
+                          <option value="Anxious">Anxious</option>
+                          <option value="Child-like">Child-Like</option>
+                          <option value="Violent">Violent</option>
+                          <option value="Angry">Angry</option>
+                          <option value="Flirty">Flirty</option>
+                        </select><br/>
+                        Entity Appearance:<span class="required field">*</span> <input type="text" name="entity_appearance" placeholder="Say what the entity looked like."><br/>
+                        Encounter Description:<span class="required field">*</span> <input type="text" name="encounter_description" placeholder="Say what happened during this encounter."><br/>
+                      </form>
+                      <!-- <h5> Date of the Encounter: <span class="required field">*</span> </h5>
+                      <h5> Approximate Time of the Encounter: <span class="required field">*</span> </h5>
+                      <h5> Location: <span class="required field">*</span> </h5>
+                      <h5> Weather during Encounter </h5>
+                      <h5> Number of People with You: </h5>
+                      <h5> What You Were Wearing: </h5>
+                      <h5> Type of Entity You Encountered: </h5>
+                      <h5> Name of Entity (if Known): </h5>
+                      <h5> Entity's Disposition: </h5>
+                      <h5> Entity's Appearance: <span class="required field">*</span> </h5>
+                      <h5> Description of Encounter: <span class="required field">*</span> </h5> -->
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Nevermind</button>
+                      <button type="button" class="btn btn-primary" id="submit-encounter">Submit</button>
                     </div>
                   </div>
                 </div>

@@ -34,37 +34,24 @@ const showEncounter = function (formData) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    // data: {
-    //   id: '',
-    //   cell: [],
-    //   over: ''
-    // }
+    data: formData
   })
 }
 
-//would you still use the same params and store?
 const updateEncounter = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/encounters/' + store.encounter.id,
+    url: config.apiUrl + '/encounters/' + formData.encounter.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      // game: {
-      //   cell: {
-      //     index: index,
-      //     value: value
-      //   },
-      //   over: status
-      }
-    }
+    data: formData
   })
 }
 
 const deleteEncounter = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/encounters/' + store.encounter.id,
+    url: config.apiUrl + '/encounters/' + formData.encounter.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -73,11 +60,10 @@ const deleteEncounter = function (formData) {
   })
 }
 
-}
-
 module.exports = {
   createEncounter,
-  indexOfEncounter,
+  getAllEncounters,
+  showEncounter,
   updateEncounter,
   deleteEncounter
 }
