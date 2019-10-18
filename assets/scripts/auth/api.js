@@ -3,8 +3,6 @@
 const config = require('../config')
 const store = require('../store')
 
-// TO DO: change api.Url to my specific project link
-
 const signUp = function (formData) {
   return $.ajax({
     method: 'POST',
