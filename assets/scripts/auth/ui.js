@@ -5,6 +5,7 @@ const store = require('../store')
 const onSignUpSuccess = function () {
   console.log('Signed Up Successfully')
   $('#auth_message').text('Signed Up Successfully!')
+  $('#signUp').modal('hide')
   $('.sign-up').trigger('reset')
 }
 
@@ -18,6 +19,10 @@ const onSignInSuccess = function (responseData) {
   console.log('Signed In Successfully')
   $('#auth_message').text('Signed In Successfully!')
   store.user = responseData.user
+  $('#signIn').modal('hide')
+  $('.sign-up, .sign-in').hide()
+  $('.sign-out, .change-password').css('display', 'block')
+  $('.sign-in').trigger('reset')
 }
 
 const onSignInFailure = function () {

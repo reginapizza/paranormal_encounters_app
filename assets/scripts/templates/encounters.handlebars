@@ -1,0 +1,19 @@
+<div class="Encounters">
+   <h2>Encounters: </h2>
+   <ul id="encounters">
+   {{#each encounters as |encounter|}}
+     <div>
+       <div>
+         {{encounter.entity_type}} was seen on {{encounter.date_of_encounter}} {{encounter.time_of_encounter}} at {{encounter.location}}.</br>
+         Weather: {{encounter.weather}}</br>
+         Number of People Present: {{encounter.number_of_people}}</br>
+         Entity Name: {{encounter.entity_name}}</br>
+         Entity's Disposition: {{encounter.disposition}}</br>
+         Entity's Appearance: {{encounter.appearance}}</br>
+         Encounter Description: {{encounter.encounter_description}}</br>
+      </div>
+      <br>
+     </div>
+   {{/each}}
+   </ul>
+</div>

@@ -1,1 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
+@import './variables.scss';
+
+body {
+  background-attachment: fixed;
+  // background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Gloomy_Forest.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: $font;
+}
+
+.change-password {
+  display: none;
+}
+
+.sign-out {
+  display: none;
+}
+
+.title {
+  text-align: center;
+}
