@@ -14,7 +14,7 @@ const onModalClick = function (event) {
 }
 
 const onCreateEncounter = function (event) {
-  console.log('create encounter events.js')
+  console.log('created encounter events.js')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)

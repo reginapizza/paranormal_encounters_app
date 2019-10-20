@@ -4,6 +4,7 @@
    {{#each encounters as |encounter|}}
      <div>
        <div>
+         Encounter ID: {{encounter.id}} </br>
          {{encounter.entity_type}} was seen on {{encounter.date_of_encounter}} {{encounter.time_of_encounter}} at {{encounter.location}}.</br>
          Weather: {{encounter.weather}}</br>
          Number of People Present: {{encounter.number_of_people}}</br>

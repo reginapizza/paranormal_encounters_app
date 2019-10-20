@@ -13,6 +13,7 @@ const onModalFailure = function () {
 const onCreateEncounterSuccess = function (data) {
   console.log(data)
   $('.resource-action-message').text('Successfully created an Encounter')
+  $('.background-info').hide()
 }
 
 const onCreateEncounterFailure = function (data) {

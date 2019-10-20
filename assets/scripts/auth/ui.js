@@ -6,13 +6,13 @@ const onSignUpSuccess = function () {
   console.log('Signed Up Successfully')
   $('#auth_message').text('Signed Up Successfully!')
   $('#signUp').modal('hide')
-  $('.sign-up').trigger('reset')
+  $('#signUpForm').trigger('reset')
 }
 
 const onSignUpFailure = function () {
   console.log('Sign Up Failed')
-  $('#auth_message').text('Signed Up Failed.')
-  $('.sign-up').trigger('reset')
+  $('#auth_message').text('Signed Up Failed. Please Try Again.')
+  $('#signUpForm').trigger('reset')
 }
 
 const onSignInSuccess = function (responseData) {
@@ -22,24 +22,25 @@ const onSignInSuccess = function (responseData) {
   $('#signIn').modal('hide')
   $('.sign-up, .sign-in').hide()
   $('.sign-out, .change-password').css('display', 'block')
-  $('.sign-in').trigger('reset')
+  $('#signInForm').trigger('reset')
 }
 
 const onSignInFailure = function () {
   console.log('Sign In Failed')
-  $('#auth_message').text('Sign in failed.')
-  $('.sign-in').trigger('reset')
+  $('#auth_message').text('Sign in failed. Please Try Again.')
+  $('#signInForm').trigger('reset')
 }
 
 const onChangePasswordSuccess = function () {
   console.log('Changed Password Successfully')
   $('#auth_message').text('Password changed successfully!')
-  $('.change-password').trigger('reset')
+  $('#changePassword').modal('hide')
+  $('#changePasswordForm').trigger('reset')
 }
 
 const onChangePasswordFailure = function () {
   console.log('Changed Password Successfully')
-  $('#auth_message').text('Password change failed.')
+  $('#auth_message').text('Password change failed. Please Try Again.')
   $('.change-password').trigger('reset')
 }
 
@@ -48,12 +49,11 @@ const onSignOutSuccess = function () {
   $('#auth_message').text('Signed out successfully!')
   $('.sign-up, .sign-in').show()
   $('.change-password, .sign-out').hide()
-  $('.sign-out').trigger('reset')
 }
 
 const onSignOutFailure = function () {
   console.log('Sign Out Failed')
-  $('#auth_message').text('Sign out failed')
+  $('#auth_message').text('Sign out failed. Please Try Again.')
   $('.sign-out').trigger('reset')
 }
 

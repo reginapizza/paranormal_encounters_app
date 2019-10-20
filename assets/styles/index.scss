@@ -9,8 +9,22 @@ body {
   font-family: $font;
 }
 
+p {
+  font-size: 15px;
+}
+
+.auth {
+  background-color: rgba(61, 89, 71, 0.5);
+  // margin: 5px;
+}
+
 .change-password {
   display: none;
+}
+
+.content {
+  background-color: rgb(114, 165, 132);
+  // margin: 5px;
 }
 
 .sign-out {
@@ -18,5 +32,6 @@ body {
 }
 
 .title {
+  margin: 5px;
   text-align: center;
 }
