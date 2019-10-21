@@ -9,7 +9,7 @@ $(() => {
   $('.change-password').on('submit', authEvents.onChangePassword)
   $('.sign-out').on('submit', authEvents.onSignOut)
   // $('#createEncounter').on('shown.bs.modal', encounterEvents.onModalClick)
-  $('#create-encounter-submit').on('submit', encounterEvents.onCreateEncounter)
+  $('.create-encounter').on('submit', encounterEvents.onCreateEncounter)
   $('#get-all-encounters').on('click', encounterEvents.onGetAllEncounters)
   $('#show-encounter').on('click', encounterEvents.onShowEncounter)
   $('#update-encounter').on('click', encounterEvents.onUpdateEncounter)
