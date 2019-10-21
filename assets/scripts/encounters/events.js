@@ -17,7 +17,7 @@ const onCreateEncounter = function (event) {
   console.log('created encounter events.js')
   event.preventDefault()
   const form = event.target
-  const formData = {encounter: getFormFields(form)}
+  const formData = getFormFields(form)
   console.log(formData)
   api.createEncounter(formData)
     .then(ui.onCreateEncounterSuccess)

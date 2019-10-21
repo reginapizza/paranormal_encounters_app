@@ -128,57 +128,76 @@
 
             <!--Getting all encounters modals-->
             <div>
-              <button id="getAllEncounters">See All Encounters</button>
+              <button class="get-all-encounters">See All Encounters</button>
             </div>
 
             <!-- <div>
               <button>See My Encounters</button>
             </div>  (stretch goal)-->
 
-            <!--Show encounter by ID-->
-            <div class="modal" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Find an Encounter by ID</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form id="showEncounterForm">
-                      Encounter ID: <input type="number" min="1" step="1"><br/>
-                      <button>Submit</button>
-                    </form>
+            <!--Show Encounter-->
+            <div class="show-encounter">
+            <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showEncounter">
+                Find an Encounter
+              </button>
+
+              <!-- Modal Show Encounter -->
+              <div class="modal fade" id="showEncounter" tabindex="-1" role="dialog" aria-labelledby="showExampleLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="showEncounterLabel">Find an Encounter</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="showEncounterForm">
+                        Which Encounter would you like to look up?</br>
+                        <input type="number" name="encounter[id]" min="0" step="1"><br/>
+                        <button type="submit" id="show-encounter-submit">Submit</button>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div> <!--ends show encounter modal-->
+            </div>
 
-            <!--Update an encounter by ID Modal-->
+            <!--Update Encounter-->
             <div>
               <button id="update-encounter">Update An Encounter</button>
             </div>
 
-            <!--Delete an encounter by ID Modal-->
-            <div class="modal" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Delete an Encounter</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form id="deleteEncounter">
-                      Encounter ID: <input type="number" min="1" step="1" placeholder="include yourself!"><br/>
-                      <button>Submit></button>
-                    </form>
+            <!--Delete Encounter-->
+            <div class="show-encounter">
+            <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteEncounter">
+                Delete an Encounter
+              </button>
+
+              <!-- Modal Delete Encounter -->
+              <div class="modal fade" id="deleteEncounter" tabindex="-1" role="dialog" aria-labelledby="deleteExampleLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteEncounterLabel">Delete an Encounter</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="deleteEncounterForm">
+                        Which encounter would you like to delete?</br>
+                        <input type="number" name="encounter[id]" min="0" step="1"><br/>
+                        <button type="submit" id="delete-encounter-submit">Submit</button>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div> <!--ends delete encounter modal-->
+            </div>
+
           </div> <!--ends column-->
 
           <!-- Button trigger modal -->
@@ -201,21 +220,27 @@
                     <div class="modal-body">
                       <h5 class="form-title"> Encounter Setting: </h5>
                       <form id="encounter-info">
-                        Date of the Encounter: <span class="required field">*</span> <input type="date" name="date_of_encounter" placeholder="YYY/MM/DD"><br/>
-                        Approximate Time of the Encounter: <span class="required field">*</span> <input type="time" name="time_of_encounter"><br/>
-                        Location: <span class="required field">*</span> <input type="text" name="location" placeholder="Ex: Whaley House, San Diego, CA"><br/>
-                        Weather During Encounter: <select name="weather">
+                        Date of the Encounter: <span class="required field">*</span> <input type="date" name="encounter[date_of_encounter]"><br/>
+                        Approximate Time of the Encounter: <span class="required field">*</span> <input type="time" name="encounter[time_of_encounter]"><br/>
+                        Location: <span class="required field">*</span> <input type="text" name="encounter[location]" placeholder="Ex: Whaley House, San Diego, CA"><br/>
+                        Weather During Encounter: <select name="encounter[weather]">
                           <option value="Sunny">Sunny</option>
+                          <option value="Clear Sky">Clear Sky</option>
+                          <option value="Partly Cloudy">Partly Cloudy</option>
                           <option value="Cloudy">Cloudy</option>
                           <option value="Rainy">Rainy</option>
                           <option value="Snowing">Snowing</option>
                           <option value="Stormy">Stormy</option>
+                          <option value="Windy">Windy</option>
+                          <option value="Hailing">Hailing</option>
+                          <option value="Foggy">Foggy</option>
+                          <option value="Humid">Humid</option>
                         </select> </br>
-                        Number of People: <input type="number" name="number_of_people" min="0" step="1" placeholder="include yourself!"><br/>
-                        What You Were Wearing:<input type="text" name="wearing" placeholder="Ex: Red shirt and blue jeans."><br/>
+                        Number of People: <input type="number" name="encounter[number_of_people]" min="0" step="1" placeholder="include yourself!"><br/>
+                        What You Were Wearing:<input type="text" name="encounter[wearing]" placeholder="Ex: Red shirt and blue jeans."><br/>
                         <br>
                         <h5> About the Entity: </h5>
-                        Entity Type:<span class="required field">*</span> <select name="entity_type">
+                        Entity Type:<span class="required field">*</span> <select name="encounter[entity_type]">
                           <option value="Apparition">Apparition</option>
                           <option value="Ghost">Ghost</option>
                           <option value="Poltergeist">Poltergeist</option>
@@ -223,8 +248,8 @@
                           <option value="Cryptid">Cryptid</option>
                           <option value="Alien">Alien</option>
                         </select><br/>
-                        Entity Name: <input type="text" name="entity_name" placeholder="Ex: Yankee Jim"><br/>
-                        Personality: <select name="disposition">
+                        Entity Name: <input type="text" name="encounter[entity_name]" placeholder="Ex: Yankee Jim"><br/>
+                        Personality: <select name="encounter[disposition]">
                           <option value="Friendly">Friendly</option>
                           <option value="Playful">Playful</option>
                           <option value="Good">Good</option>
@@ -236,8 +261,8 @@
                           <option value="Angry">Angry</option>
                           <option value="Flirty">Flirty</option>
                         </select><br/>
-                        Entity Appearance:<span class="required field">*</span> <input type="text" name="appearance" placeholder="Ex: Colonial Garb."><br/>
-                        Encounter Description:<span class="required field">*</span> <input type="text" name="encounter_description" placeholder="Ex: Slammed Door."><br/>
+                        Entity Appearance:<span class="required field">*</span> <input type="text" name="encounter[appearance]" placeholder="Ex: Colonial Garb."><br/>
+                        Encounter Description:<span class="required field">*</span> <input type="text" name="encounter[encounter_description]" placeholder="Ex: Slammed Door."><br/>
                         <br>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Nevermind</button>
                         <button type="submit" id="create-encounter-submit">Submit</button> <!--class="btn btn-primary"-->
@@ -265,24 +290,9 @@
               <p class="resource-action-message"> Message </p>
             </div>
             <div class="resource-view">
-              <p class="resource-view"></p>
+              <p></p>
             </div>
-            <div>
-              <button id="get-all-encounters">See All Encounters</button>
-            </div>
-            <!-- <div>
-              <button>See My Encounters</button>
-            </div> -->
-            <div>
-              <button id="show-encounter">Find An Encounter</button>
-            </div>
-            <div>
-              <button id="update-encounter">Update An Encounter</button>
-            </div>
-            <div>
-              <button id="delete-encounter">Delete An Encounter</button>
-            </div>
-          </div>
+          </div> <!--ends column-->
         </div> <!--ends row-->
       </div> <!--ends container-->
     </body>
