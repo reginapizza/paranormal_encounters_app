@@ -12,5 +12,5 @@ $(() => {
   $('.get-all-encounters').on('click', encounterEvents.onGetAllEncounters)
   $('.show-encounter').on('submit', encounterEvents.onShowEncounter)
   $('.update-encounter').on('submit', encounterEvents.onUpdateEncounter)
-  $('.delete-encounters').on('submit', encounterEvents.onDeleteEncounter)
+  $('.delete-encounter').on('submit', encounterEvents.onDeleteEncounter)
 })

@@ -4,20 +4,20 @@ const store = require('../store')
 
 const onSignUpSuccess = function () {
   console.log('Signed Up Successfully')
-  $('#auth_message').text('Signed Up Successfully!')
+  $('#message-center').text('Signed Up Successfully!')
   $('#signUp').modal('hide')
   $('#signUpForm').trigger('reset')
 }
 
 const onSignUpFailure = function () {
   console.log('Sign Up Failed')
-  $('#auth_message').text('Signed Up Failed. Please Try Again.')
+  $('#message-center').text('Signed Up Failed. Please Try Again.')
   $('#signUpForm').trigger('reset')
 }
 
 const onSignInSuccess = function (responseData) {
   console.log('Signed In Successfully')
-  $('#auth_message').text('Signed In Successfully!')
+  $('#message-center').text('Signed In Successfully!')
   store.user = responseData.user
   $('#signIn').modal('hide')
   $('.sign-up, .sign-in').hide()
@@ -27,33 +27,33 @@ const onSignInSuccess = function (responseData) {
 
 const onSignInFailure = function () {
   console.log('Sign In Failed')
-  $('#auth_message').text('Sign in failed. Please Try Again.')
+  $('#message-center').text('Sign in failed. Please Try Again.')
   $('#signInForm').trigger('reset')
 }
 
 const onChangePasswordSuccess = function () {
   console.log('Changed Password Successfully')
-  $('#auth_message').text('Password changed successfully!')
+  $('#message-center').text('Password changed successfully!')
   $('#changePassword').modal('hide')
   $('#changePasswordForm').trigger('reset')
 }
 
 const onChangePasswordFailure = function () {
   console.log('Changed Password Successfully')
-  $('#auth_message').text('Password change failed. Please Try Again.')
+  $('#message-center').text('Password change failed. Please Try Again.')
   $('.change-password').trigger('reset')
 }
 
 const onSignOutSuccess = function () {
   console.log('Signed Out Successfully')
-  $('#auth_message').text('Signed out successfully!')
+  $('#message-center').text('Signed out successfully!')
   $('.sign-up, .sign-in').show()
   $('.change-password, .sign-out').hide()
 }
 
 const onSignOutFailure = function () {
   console.log('Sign Out Failed')
-  $('#auth_message').text('Sign out failed. Please Try Again.')
+  $('#message-center').text('Sign out failed. Please Try Again.')
   $('.sign-out').trigger('reset')
 }
 

@@ -20,9 +20,9 @@
         <div class="row">
           <div class="auth col-12 col-lg-3 panel">
 
-            <!--Auth Message Box-->
+            <!--Message Center-->
             <div>
-              <div id="auth_message"></div>
+              <div id="message-center"></div>
             </div>
             <!--SIGN UP-->
             <div class="sign-up">
@@ -154,7 +154,7 @@
                     </div>
                     <div class="modal-body">
                       <form id="showEncounterForm">
-                        Which Encounter would you like to look up?</br>
+                        Which encounter would you like to look up?</br>
                         <input type="number" name="encounter[id]" min="0" step="1"><br/>
                         <button type="submit" id="show-encounter-submit">Submit</button>
                       </form>
@@ -165,12 +165,82 @@
             </div>
 
             <!--Update Encounter-->
-            <div>
-              <button id="update-encounter">Update An Encounter</button>
+            <div class="update-encounter">
+            <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateEncounter">
+                Update an Encounter
+              </button>
+
+              <!-- Modal Update Encounter -->
+              <div class="modal fade" id="updateEncounter" tabindex="-1" role="dialog" aria-labelledby="updateExampleLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateEncounterLabel">Update an Encounter</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="updateEncounterForm">
+                        Which encounter would you like to update?</br>
+                        Encounter ID: <input type="number" name="encounter[id]" min="0" step="1"><br/>
+                        <br>
+                        <h5>Updated Information:</h5>
+                        Date of the Encounter: <span class="required field">*</span> <input type="date" name="encounter[date_of_encounter]"><br/>
+                        Approximate Time of the Encounter: <span class="required field">*</span> <input type="time" name="encounter[time_of_encounter]"><br/>
+                        Location: <span class="required field">*</span> <input type="text" name="encounter[location]" placeholder="Ex: Whaley House, San Diego, CA"><br/>
+                        Weather During Encounter: <select name="encounter[weather]">
+                          <option value="Sunny">Sunny</option>
+                          <option value="Clear Sky">Clear Sky</option>
+                          <option value="Partly Cloudy">Partly Cloudy</option>
+                          <option value="Cloudy">Cloudy</option>
+                          <option value="Rainy">Rainy</option>
+                          <option value="Snowing">Snowing</option>
+                          <option value="Stormy">Stormy</option>
+                          <option value="Windy">Windy</option>
+                          <option value="Hailing">Hailing</option>
+                          <option value="Foggy">Foggy</option>
+                          <option value="Humid">Humid</option>
+                        </select> </br>
+                        Number of People: <input type="number" name="encounter[number_of_people]" min="0" step="1" placeholder="include yourself!"><br/>
+                        What You Were Wearing:<input type="text" name="encounter[wearing]" placeholder="Ex: Red shirt and blue jeans."><br/>
+                        <br>
+                        <h5> About the Entity: </h5>
+                        Entity Type:<span class="required field">*</span> <select name="encounter[entity_type]">
+                          <option value="Apparition">Apparition</option>
+                          <option value="Ghost">Ghost</option>
+                          <option value="Poltergeist">Poltergeist</option>
+                          <option value="Demon">Demon</option>
+                          <option value="Cryptid">Cryptid</option>
+                          <option value="Alien">Alien</option>
+                        </select><br/>
+                        Entity Name: <input type="text" name="encounter[entity_name]" placeholder="Ex: Yankee Jim"><br/>
+                        Personality: <select name="encounter[disposition]">
+                          <option value="Friendly">Friendly</option>
+                          <option value="Playful">Playful</option>
+                          <option value="Good">Good</option>
+                          <option value="Reserved">Reserved</option>
+                          <option value="Serious">Serious</option>
+                          <option value="Anxious">Anxious</option>
+                          <option value="Child-like">Child-Like</option>
+                          <option value="Violent">Violent</option>
+                          <option value="Angry">Angry</option>
+                          <option value="Flirty">Flirty</option>
+                        </select><br/>
+                        Entity Appearance:<span class="required field">*</span> <input type="text" name="encounter[appearance]" placeholder="Ex: Colonial Garb."><br/>
+                        Encounter Description:<span class="required field">*</span> <input type="text" name="encounter[encounter_description]" placeholder="Ex: Slammed Door."><br/>
+                        <br>
+                        <button type="submit" id="update-encounter-submit">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!--Delete Encounter-->
-            <div class="show-encounter">
+            <div class="delete-encounter">
             <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteEncounter">
                 Delete an Encounter
@@ -264,8 +334,7 @@
                         Entity Appearance:<span class="required field">*</span> <input type="text" name="encounter[appearance]" placeholder="Ex: Colonial Garb."><br/>
                         Encounter Description:<span class="required field">*</span> <input type="text" name="encounter[encounter_description]" placeholder="Ex: Slammed Door."><br/>
                         <br>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Nevermind</button>
-                        <button type="submit" id="create-encounter-submit">Submit</button> <!--class="btn btn-primary"-->
+                        <button type="submit" id="create-encounter-submit">Submit</button>
                       </form>
                     </div>
                   </div>
@@ -286,9 +355,9 @@
               <h5>Aliens & UFO's</h5>
               <p>More specifically extraterrestrial intelligent life and unidentified flying objects. There have been many reports of UFO sightings dating back to 1440 B.C. and alien encounters of third and fourth kind with plausible enough evidence to be investigated by multiple governments.</p>
             </div>
-            <div>
+            <!-- <div>
               <p class="resource-action-message"> Message </p>
-            </div>
+            </div> -->
             <div class="resource-view">
               <p></p>
             </div>
