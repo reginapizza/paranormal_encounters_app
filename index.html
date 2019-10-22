@@ -12,7 +12,7 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
+    <body data-spy="scroll">
       <div class="container">
         <div class="row title">
           <h1 class="col-12">Paranormal Encounters</h1>
@@ -20,15 +20,11 @@
         <div class="row">
           <div class="side-bar col-12 col-lg-3 panel">
 
-            <!--Message Center-->
-            <div>
-              <div id="message-center"></div>
-            </div>
             <!--SIGN UP-->
             <div class="sign-up">
               <h5> New User? </h5>
               <!-- Sign up Modal Button -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUp">
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signUp">
                 Sign Up Now
               </button>
               <!-- Modal -->
@@ -61,7 +57,7 @@
             <div class="sign-in">
               <h5> Returning User? </h5>
               <!-- Sign In Modal Button -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signIn">
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signIn">
                 Sign In Now
               </button>
               <!-- Modal -->
@@ -91,7 +87,7 @@
             <!--CHANGE PASSWORD-->
             <div class="change-password">
               <!-- Sign in Modal Button -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePassword">
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#changePassword">
                 Change Password
               </button>
               <!-- Modal -->
@@ -122,13 +118,13 @@
             <!--sign out-->
             <div>
               <form class="sign-out">
-                <button class="btn">Sign Out!</button>
+                <button class="btn btn-block">Sign Out!</button>
               </form>
             </div>
 
             <!--Getting all encounters modals-->
             <div>
-              <button class="get-all-encounters btn">See All Encounters</button>
+              <button class="get-all-encounters btn btn-block">See All Encounters</button>
             </div>
 
             <!-- <div>
@@ -138,7 +134,7 @@
             <!--Show Encounter-->
             <div class="show-encounter">
             <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showEncounter">
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#showEncounter">
                 Find an Encounter
               </button>
 
@@ -167,7 +163,7 @@
             <!--Update Encounter-->
             <div class="update-encounter">
             <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateEncounter">
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#updateEncounter">
                 Update an Encounter
               </button>
 
@@ -186,7 +182,7 @@
                         Which encounter would you like to update?</br>
                         Encounter ID: <input type="number" name="encounter[id]" min="0" step="1"><br/>
                         <br>
-                        <h5>Updated Information:</h5>
+                        <h4>Updated Information:</h4>
                         Date of the Encounter: <span class="required field">*</span> <input type="date" name="encounter[date_of_encounter]"><br/>
                         Approximate Time of the Encounter: <span class="required field">*</span> <input type="time" name="encounter[time_of_encounter]"><br/>
                         Location: <span class="required field">*</span> <input type="text" name="encounter[location]" placeholder="Ex: Whaley House, San Diego, CA"><br/>
@@ -206,7 +202,7 @@
                         Number of People: <input type="number" name="encounter[number_of_people]" min="0" step="1" placeholder="include yourself!"><br/>
                         What You Were Wearing:<input type="text" name="encounter[wearing]" placeholder="Ex: Red shirt and blue jeans."><br/>
                         <br>
-                        <h5> About the Entity: </h5>
+                        <h4> About the Entity: </h4>
                         Entity Type:<span class="required field">*</span> <select name="encounter[entity_type]">
                           <option value="Apparition">Apparition</option>
                           <option value="Ghost">Ghost</option>
@@ -242,7 +238,7 @@
             <!--Delete Encounter-->
             <div class="delete-encounter">
             <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteEncounter">
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#deleteEncounter">
                 Delete an Encounter
               </button>
 
@@ -268,13 +264,17 @@
               </div>
             </div>
 
+            <!--Message Center-->
+            <div>
+              <div id="message-center"></div>
+            </div>
+
           </div> <!--ends column-->
 
-          <!-- Button trigger modal -->
           <div class="content col-12 col-lg-9">
-
+            <!-- Button trigger modal -->
             <div class="create-encounter">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createEncounter">
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#createEncounter">
                 Had an Encounter? Click here to log it now!
               </button>
               <!-- Modal -->
@@ -288,7 +288,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <h5 class="form-title"> Encounter Setting: </h5>
+                      <h4 class="form-title"> Encounter Setting: </h4>
                       <form id="encounter-info">
                         Date of the Encounter: <span class="required field">*</span> <input type="date" name="encounter[date_of_encounter]"><br/>
                         Approximate Time of the Encounter: <span class="required field">*</span> <input type="time" name="encounter[time_of_encounter]"><br/>
@@ -309,7 +309,7 @@
                         Number of People: <input type="number" name="encounter[number_of_people]" min="0" step="1" placeholder="include yourself!"><br/>
                         What You Were Wearing:<input type="text" name="encounter[wearing]" placeholder="Ex: Red shirt and blue jeans."><br/>
                         <br>
-                        <h5> About the Entity: </h5>
+                        <h4> About the Entity: </h4>
                         Entity Type:<span class="required field">*</span> <select name="encounter[entity_type]">
                           <option value="Apparition">Apparition</option>
                           <option value="Haunting Ghost">Haunting Ghost</option>
@@ -345,7 +345,7 @@
               <h5><a href="https://en.wikipedia.org/wiki/Ghost">Haunting Ghosts</a></h5>
               <p>Also referred to as a "haunting" or a "residual haunting," this type of entity appears to be a recording of energy that replays itself over and over again. Hauntings usually exist in a location where a person or animal repeated the same task over and over during its life. Some investigators believe through repetition, a psychic imprint is left within that space and remains long after the person or animal has passed away.</p>
 
-              <h5><a href="">Apparitions</a></h5>
+              <h5><a href="http://publicparapsychology.blogspot.com/2009/11/apparitional-experiences-primer-on.html">Apparitions</a></h5>
               <p>Unlike hauntings, apparitions appear to interact intelligently with people in the living world. Spirits may knock, open and close doors or cupboards, move objects, answer questions on voice recorders, and sometimes even interact with electronic equipment like flashlights and EMF (Electro-Magnetic Field) meters. The existing, yet unproven, one hypothesis states spirits are made up of energies of varying power levels, and they take energy out of the area around them in order to manifest those interactions.</p>
 
               <h5><a href="https://en.wikipedia.org/wiki/Poltergeist">Poltergeists</a></h5>

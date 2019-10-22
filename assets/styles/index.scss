@@ -1,29 +1,54 @@
 @import '~bootstrap/scss/bootstrap';
 @import './variables.scss';
 
-a[href^="https"] {
+a[href^="http"] {
   color: inherit;
 }
 
 body {
+  background: url('public/Haunted_Forest.jpg');
   background-attachment: fixed;
-  background: url('public/Haunted-Forest.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
+  background-size: 100% auto;
   font-family: $font;
   font-weight: bold;
   text-decoration: none;
+}
+
+
+
+input {
+  margin-bottom: 10px;
+}
+
+h5 {
+  color: white;
 }
 
 p {
   font-size: 15px;
 }
 
+.background-info {
+  margin: 10px;
+}
+
 .btn {
   background-color: #ABF2C4;
   border-radius: 12px;
   color: #3D5947;
+  display: inline-block;
+  flex: 1 1 0px;
+  margin: 5px;
+  outline: 1px #ABF2C4 !important;
+  padding: 10px;
+}
+
+.btn:hover {
+  background-color: #3D5947;
+  color: #ABF2C4;
+  outline: 1px #ABF2C4;
 }
 
 .change-password,
@@ -31,7 +56,8 @@ p {
 .get-all-encounters,
 .show-encounter,
 .update-encounter,
-.delete-encounter {
+.delete-encounter,
+.create-encounter {
   display: none;
 }
 
@@ -39,12 +65,26 @@ p {
   background-color: rgba(114, 165, 132, .8);
   border-radius: 12px;
   padding: 10px;
+  color: white;
   // margin: 5px;
 }
 
+.modal-body {
+  color: #2D3F33;
+}
+
+.modal-title {
+  color: #2D3F33;
+  text-align: center;
+}
+
 .title {
-  font-size: 100px;
+  font-size: 150px;
   margin: 5px;
   text-align: center;
+  color: white;
+}
+
+#message-center {
   color: white;
 }
