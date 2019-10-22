@@ -60,16 +60,17 @@ const onShowEncounterFailure = function (data) {
 
 const onUpdateEncounterSuccess = function (data) {
   console.log('success update')
-  data.encounters = data.encounters.map(encounter => {
-    encounter.date_of_encounter = new Date(encounter.date_of_encounter).toLocaleDateString()
-    encounter.time_of_encounter = new Date(encounter.time_of_encounter).toLocaleTimeString()
-
-    return encounter
-  })
+  $('.resource-view').empty()
+  // data.encounters = data.encounters.map(encounter => {
+  //   encounter.date_of_encounter = new Date(encounter.date_of_encounter).toLocaleDateString()
+  //   encounter.time_of_encounter = new Date(encounter.time_of_encounter).toLocaleTimeString()
+  //
+  //   return encounter
+  // })
   $('#message-center').text('Successfully updated Encounter')
   $('#updateEncounter').modal('hide')
   $('#updateEncounterForm').trigger('reset')
-  $('.resource-view').append(showEncounterHandlebars({Encounter: data.encounter}))
+  $('.resource-view').append(showEncounterHandlebars({encounter: data.encounter}))
   $('.background-info').hide()
 }
 

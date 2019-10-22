@@ -3,35 +3,48 @@
 
 body {
   background-attachment: fixed;
-  // background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Gloomy_Forest.jpg');
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Gloomy_Forest.jpg');
   background-position: center;
   background-repeat: no-repeat;
+  color: white;
   font-family: $font;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 p {
   font-size: 15px;
 }
 
-.auth {
-  background-color: rgba(61, 89, 71, 0.5);
-  // margin: 5px;
+.btn {
+  background-color: #ABF2C4;
+  border-radius: 12px;
+  color: #3D5947;
 }
 
-.change-password {
+.change-password,
+.sign-out,
+.get-all-encounters,
+.show-encounter,
+.update-encounter,
+.delete-encounter {
   display: none;
 }
 
 .content {
-  background-color: rgb(114, 165, 132);
+  background-color: rgba(114, 165, 132, .8);
+  border-radius: 12px;
+  padding: 10px;
   // margin: 5px;
 }
 
-.sign-out {
-  display: none;
-}
+// .sign-out {
+//   display: none;
+// }
 
 .title {
+  font-size: 100px;
   margin: 5px;
   text-align: center;
+  color: white;
 }

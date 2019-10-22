@@ -21,7 +21,7 @@ const onSignInSuccess = function (responseData) {
   store.user = responseData.user
   $('#signIn').modal('hide')
   $('.sign-up, .sign-in').hide()
-  $('.sign-out, .change-password').css('display', 'block')
+  $('.sign-out, .change-password, .get-all-encounters, .show-encounter, .update-encounter, .delete-encounter').css('display', 'block')
   $('#signInForm').trigger('reset')
 }
 
