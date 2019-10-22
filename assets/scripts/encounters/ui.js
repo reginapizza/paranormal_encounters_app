@@ -6,15 +6,16 @@ const onCreateEncounterSuccess = function (data) {
   $('#message-center').text('Successfully created an Encounter.')
   $('.background-info').hide()
   $('#createEncounter').modal('hide')
+  $('#encounter-info').trigger('reset')
 }
 
 const onCreateEncounterFailure = function (data) {
   $('#message-center').text('Failed to create an Encounter. Please try again.')
   $('#createEncounter').modal('hide')
+  $('#encounter-info').trigger('reset')
 }
 
 const onGetAllEncountersSuccess = function (data) {
-  // new Date(encounter.date_of_encounter).toLocaleDateString()
   data.encounters = data.encounters.map(encounter => {
     encounter.date_of_encounter = new Date(encounter.date_of_encounter).toLocaleDateString()
     encounter.time_of_encounter = new Date(encounter.time_of_encounter).toLocaleTimeString()
@@ -35,12 +36,8 @@ const onShowEncounterSuccess = function (data) {
   $('#showEncounter').modal('hide')
   $('#showEncounterForm').trigger('reset')
   $('.resource-view').empty()
-  // data.encounter = data.encounter.map(encounter => {
-  //   encounter.date_of_encounter = new Date(encounter.date_of_encounter).toLocaleDateString()
-  //   encounter.time_of_encounter = new Date(encounter.time_of_encounter).toLocaleTimeString()
-  //
-  //   return encounter
-  // })
+  data.encounter.date_of_encounter = new Date(data.encounter.date_of_encounter).toLocaleDateString()
+  data.encounter.time_of_encounter = new Date(data.encounter.time_of_encounter).toLocaleTimeString()
   $('#message-center').text('Successfully got an Encounter')
   $('.background-info').hide()
   $('.resource-view').css('display', 'block').append(showEncounterHandlebars({encounter: data.encounter}))
@@ -54,12 +51,8 @@ const onShowEncounterFailure = function (data) {
 
 const onUpdateEncounterSuccess = function (data) {
   $('.resource-view').empty()
-  // data.encounters = data.encounters.map(encounter => {
-  //   encounter.date_of_encounter = new Date(encounter.date_of_encounter).toLocaleDateString()
-  //   encounter.time_of_encounter = new Date(encounter.time_of_encounter).toLocaleTimeString()
-  //
-  //   return encounter
-  // })
+  data.encounter.date_of_encounter = new Date(data.encounter.date_of_encounter).toLocaleDateString()
+  data.encounter.time_of_encounter = new Date(data.encounter.time_of_encounter).toLocaleTimeString()
   $('#message-center').text('Successfully updated Encounter')
   $('#updateEncounter').modal('hide')
   $('#updateEncounterForm').trigger('reset')
@@ -70,6 +63,7 @@ const onUpdateEncounterSuccess = function (data) {
 const onUpdateEncounterFailure = function (data) {
   $('#updateEncounter').modal('hide')
   $('#message-center').text('You do not have permission to do that.')
+    $('#updateEncounterForm').trigger('reset')
 }
 
 const onDeleteEncounterSuccess = function () {
