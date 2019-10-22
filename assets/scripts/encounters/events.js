@@ -2,30 +2,26 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
-
-const onModalClick = function (event) {
-  console.log('Modal was clicked- events.js ok')
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.createEncounter(formData)
-    .then(ui.onModalSuccess)
-    .catch(ui.onSignUpFailure)
-}
+//
+// const onModalClick = function (event) {
+//   event.preventDefault()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   api.createEncounter(formData)
+//     .then(ui.onModalSuccess)
+//     .catch(ui.onSignUpFailure)
+// }
 
 const onCreateEncounter = function (event) {
-  console.log('created encounter events.js')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
   api.createEncounter(formData)
     .then(ui.onCreateEncounterSuccess)
     .catch(ui.onCreateEncounterFailure)
 }
 
 const onGetAllEncounters = function (event) {
-  console.log('get all encounters events.js')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -35,7 +31,6 @@ const onGetAllEncounters = function (event) {
 }
 
 const onShowEncounter = function (event) {
-  console.log('show encounters events.js')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -45,7 +40,6 @@ const onShowEncounter = function (event) {
 }
 
 const onUpdateEncounter = function (event) {
-  console.log('update encounters events.js')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -55,7 +49,6 @@ const onUpdateEncounter = function (event) {
 }
 
 const onDeleteEncounter = function (event) {
-  console.log('delete encounter events.js')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
@@ -65,7 +58,7 @@ const onDeleteEncounter = function (event) {
 }
 
 module.exports = {
-  onModalClick,
+  // onModalClick,
   onCreateEncounter,
   onGetAllEncounters,
   onShowEncounter,
