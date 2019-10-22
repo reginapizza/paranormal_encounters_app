@@ -50,6 +50,7 @@ const onSignOutSuccess = function () {
   $('.resource-view').css('display', 'none')
   $('.sign-up, .sign-in, .background-info').show()
   $('.sign-out, .change-password, .get-all-encounters, .show-encounter, .update-encounter, .delete-encounter, .create-encounter').hide()
+  $('#signUpForm, #signInForm, #changePasswordForm, #encounter-info, #deleteEncounterForm, #updateEncounterForm, #showEncounterForm').trigger('reset')
 }
 
 const onSignOutFailure = function () {
