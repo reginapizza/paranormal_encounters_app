@@ -16,7 +16,12 @@ body {
   text-decoration: none;
 }
 
-
+footer {
+  align-items: center;
+  color: white;
+  height: 50px;
+  text-align: center;
+}
 
 input {
   margin-bottom: 10px;
@@ -57,7 +62,8 @@ p {
 .show-encounter,
 .update-encounter,
 .delete-encounter,
-.create-encounter {
+.create-encounter,
+.resource-view {
   display: none;
 }
 
@@ -87,4 +93,5 @@ p {
 
 #message-center {
   color: white;
+  text-align: center;
 }

@@ -4,14 +4,14 @@ const showEncounterHandlebars = require('../templates/showEncounter.handlebars')
 
 const onCreateEncounterSuccess = function (data) {
   console.log(data)
-  $('#message-center').text('Successfully created an Encounter').fadeOut(5000)
+  $('#message-center').text('Successfully created an Encounter.')
   $('.background-info').hide()
   $('#createEncounter').modal('hide')
 }
 
 const onCreateEncounterFailure = function (data) {
   console.log(data)
-  $('#message-center').text('Failed to create an Encounter').fadeOut(10000)
+  $('#message-center').text('Failed to create an Encounter. Please try again.')
   $('#createEncounter').modal('hide')
 }
 
@@ -25,14 +25,14 @@ const onGetAllEncountersSuccess = function (data) {
     return encounter
   })
   $('.resource-view').empty()
-  $('.resource-view').append(getEncountersHandlebars({encounters: data.encounters}))
-  $('#message-center').text('Successfully got all Encounters').fadeOut(5000)
+  $('.resource-view').css('display', 'block').append(getEncountersHandlebars({encounters: data.encounters}))
+  $('#message-center').text('Successfully got all Encounters')
   $('.background-info').hide()
 }
 
 const onGetAllEncountersFailure = function (data) {
   console.log('getAllEncounters ui failed')
-  $('#message-center').text('Failed to get all Encounters').fadeOut(10000)
+  $('#message-center').text('Failed to get all Encounters. Please try again.')
 }
 
 const onShowEncounterSuccess = function (data) {
@@ -46,15 +46,15 @@ const onShowEncounterSuccess = function (data) {
   //
   //   return encounter
   // })
-  $('#message-center').text('Successfully got an Encounter').fadeOut(5000)
+  $('#message-center').text('Successfully got an Encounter')
   $('.background-info').hide()
-  $('.resource-view').append(showEncounterHandlebars({encounter: data.encounter}))
+  $('.resource-view').css('display', 'block').append(showEncounterHandlebars({encounter: data.encounter}))
 }
 
 const onShowEncounterFailure = function (data) {
   console.log('showEncounterFailure ui')
   $('#showEncounter').modal('hide')
-  $('#message-center').text('Failed to get an Encounter').fadeOut(10000)
+  $('#message-center').text('ID could not be found, please try again.')
   $('#showEncounterForm').trigger('reset')
 }
 
@@ -67,24 +67,24 @@ const onUpdateEncounterSuccess = function (data) {
   //
   //   return encounter
   // })
-  $('#message-center').text('Successfully updated Encounter').fadeOut(5000)
+  $('#message-center').text('Successfully updated Encounter')
   $('#updateEncounter').modal('hide')
   $('#updateEncounterForm').trigger('reset')
-  $('.resource-view').append(showEncounterHandlebars({encounter: data.encounter}))
+  $('.resource-view').css('display', 'block').append(showEncounterHandlebars({encounter: data.encounter}))
   $('.background-info').hide()
 }
 
 const onUpdateEncounterFailure = function (data) {
   console.log('failure update')
   $('#updateEncounter').modal('hide')
-  $('#message-center').text('Failed to update Encounter').fadeOut(10000)
+  $('#message-center').text('You do not have permission to do that.')
 }
 
 const onDeleteEncounterSuccess = function () {
   console.log('success delete')
   $('.resource-view').empty()
   $('.background-info').show()
-  $('#message-center').text('Successfully deleted an Encounter').fadeOut(5000)
+  $('#message-center').text('Successfully deleted an Encounter')
   $('#deleteEncounter').modal('hide')
   $('#deleteEncounterForm').trigger('reset')
 }
@@ -92,13 +92,11 @@ const onDeleteEncounterSuccess = function () {
 const onDeleteEncounterFailure = function () {
   console.log('failure delete')
   $('#deleteEncounter').modal('hide')
-  $('#message-center').text('Failed to delete an Encounter').fadeOut(10000)
+  $('#message-center').text('You do not have permission to do that.')
   $('#deleteEncounterForm').trigger('reset')
 }
 
 module.exports = {
-  // onModalSuccess,
-  // onModalFailure,
   onCreateEncounterSuccess,
   onCreateEncounterFailure,
   onGetAllEncountersSuccess,
