@@ -1,129 +1,66 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+## **Hello, World! Welcome to my Game of Tic-Tac-Toe**.
+------------------------------------------------------
 
-# browser-template
+**This application allows users to log a paranormal encounter they that will
+keep track of multiple important aspects of the encounter. I created this
+project as part of General Assembly's Software Engineering Immersive Program.
+whether you want to have a paranormal encounter or not, I hope you have fun
+making some up or reading through other's!**
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+### **Important Links**:
 
-## Installation
+* [My SPA hosted on Github Pages](https://reginapizza.github.io/paranormal_encounters_app/)
+* [My client repository on Github](https://github.com/reginapizza/paranormal_encounters_app)
 
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+### **Technologies Used:**
+* HTML
+* CSS
+* JavaScript
+* jquery
+* AJAX
+* JSON
+* Bootstrap
+* Sass
+* Handlebars
 
-## Structure
+### **User Stories:**
 
-### Scripts
+1. As a user, I want to be able to log an encounter with a paranormal entity.
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+2. As a user, I want to be able to edit an encounter with a paranormal entity.
 
-### Config
+3. As a user, I want to be able to delete an encounter with a paranormal entity.
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+4. As a user, I want to be able to see all my encounters with paranormal entities.
 
-### Styles
+5. As a user, I want to be able to get an encounter by a data point (location, ghost name, date, weather)
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+7. As a user, I want the website to visually appealing and easy to navigate.
 
-### Forms and Using `getFormFields`
+8. As a user, I want to know the difference between paranormal entities before I log them.
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+9. As a user, I want to be able to sign up, sign-in, change password, and sign out.
 
-### Deployment
+### **Planning Story:**
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+When envisioning this application, I knew I wanted it to be a simple layout with
+a side bar for all buttons and a main stage for viewing content. After drawing up my wireframes, I started with boilerplate html and added in sections for auth actions such as sign-up, sign-in, change password, and sign-out, then went about tying in those to my API with ajax, and using jquery for DOM manipulation. When I was trying to imagine what my main content would look like, I knew that I didn't want it to be crowded with form fields that the user would have when they were doing CRUD actions on their encounters. So to save space, I decided to use modals for all my forms, and eventually re-did my auth actions to have modals as well since it was much easier than I thought and allowed my stage to look more streamlined. After I had all my auth and encounter CRUD actions working, I decided to fill up the remaining screen space (before users click to see data) with background information about the possible paranormal entities that they could run into. Once my content was created, I styled it using inspiration from night-vision cameras on ghost-hunting shows.
 
-## Adding Images
+### **Problems I Ran in to:**
 
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
+I originally had a large issue with displaying the time. When I was creating my table in my database, I decided to separate ```time``` and ```date``` instead of doing ```dateTime``` because I wanted the date to be validated, but I wanted the user to be able to choose whether or not they wanted to put in a time (in case they didn't know the time something happened). Because I was putting in the data type as time, it was also displaying with a date when the user submitted data (the date would always be 2000-01-01), so I had to include javascript in my code that would change it to an acceptable format, and would loop through the data for getting all the encounters to change each date on the page to an acceptable format.
 
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
+Another issue I ran into was with deploying to gitHub pages. When I originally deployed, I was getting 404 ERR_ABORTED in my console and I was only seeing html rendering. To solve this issue, I had to run npm install again and then run grunt build and grunt deploy separately. After that it all worked as expected.
 
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
+I also had a few bugs with clearing forms, but that wasn't too hard to fix.
 
-## Adding Fonts
+### **Future Updates:**
 
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
+For future updates, I would like to add an option for a user to click a button and see only their encounters as opposed to everyone's encounters. For the original requirements of the project I had to pick either showing all resources or showing all of the user's resources. I figured that it would be more fun to see everyone's encounters than just your own so I ended up going with that choice, but I would eventually like to do both and I do not think it would be too hard.
 
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
+I would also like to have a way for a user to upload a picture or a video when creating an encounter, although I'm not sure if there's more to that than I think there is. I will have to look more into that, but hopefully that will be an option in V2!
 
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
+### **Original Wireframe Sketch:**
 
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
-
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+![Original Wireframe drawing for Paranormal Encounters SPA](https://i.imgur.com/TE5KPpD.jpg)
+![Original Wireframe drawing for Create-An-Encounter Modal](https://i.imgur.com/ryNPuml.jpg)
