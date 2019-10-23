@@ -9,7 +9,7 @@ const onSignUpSuccess = function () {
 }
 
 const onSignUpFailure = function () {
-  $('#message-center').text('Signed Up Failed. Please Try Again.')
+  $('#message-center').text('Sign Up Failed. Please Try Again.')
   $('#signUpForm').trigger('reset')
 }
 
