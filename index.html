@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Paranormal Encounters </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body data-spy="scroll">
+      <div class="container">
+        <div class="row title">
+          <h1 class="col-12">Paranormal Encounters</h1>
+        </div>
+        <div class="row">
+          <div class="side-bar col-12 col-lg-3 panel">
+
+            <!--SIGN UP-->
+            <div class="sign-up">
+              <h5> New User? </h5>
+              <!-- Sign up Modal Button -->
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signUp">
+                Sign Up Now
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="signUpLabel">Sign Up</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="signUpForm">
+                        <input type="email" name="credentials[email]" placeholder="Enter Email">
+                        <input type="password" name="credentials[password]"
+                        placeholder="Enter Password">
+                        <input type="password" name="credentials[password_confirmation]"
+                        placeholder="Enter Password Again"></br>
+                        <button>Sign Up!</button>
+                      </form>
+                      <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div> <!--ends sign up modal-->
+            </div> <!--ends sign up-->
+
+            <!--SIGN IN-->
+            <div class="sign-in">
+              <h5> Returning User? </h5>
+              <!-- Sign In Modal Button -->
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signIn">
+                Sign In Now
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="signInLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="signInLabel">Sign In</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="signInForm">
+                        <input class="sign-in-start" type="email" name="credentials[email]" placeholder="Enter Email">
+                        <input class="sign-in-start" type="password" name="credentials[password]"
+                        placeholder="Enter Password">
+                        <button>Sign In!</button>
+                      </form>
+                      <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div> <!--ends sign in modal-->
+            </div> <!--ends sign in-->
+
+            <!--CHANGE PASSWORD-->
+            <div class="change-password">
+              <!-- Sign in Modal Button -->
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#changePassword">
+                Change Password
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="changePasswordLabel">Sign In</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="changePasswordForm">
+                        <input type="password" name="passwords[old]"
+                        placeholder="Enter Old Password">
+                        <input type="password" name="passwords[new]"
+                        placeholder="Enter New Password">
+                        <button type="submit">Change Password!</button>
+                      </form>
+                      <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div> <!--ends change password modal-->
+            </div> <!--ends change password-->
+
+            <!--sign out-->
+            <div>
+              <form class="sign-out">
+                <button class="btn btn-block">Sign Out!</button>
+              </form>
+            </div>
+
+            <!--Getting all encounters modals-->
+            <div>
+              <button class="get-all-encounters btn btn-block">See All Encounters</button>
+            </div>
+
+            <!-- <div>
+              <button>See My Encounters</button>
+            </div>  (stretch goal)-->
+
+            <!--Show Encounter-->
+            <div class="show-encounter">
+            <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#showEncounter">
+                Find an Encounter
+              </button>
+
+              <!-- Modal Show Encounter -->
+              <div class="modal fade" id="showEncounter" tabindex="-1" role="dialog" aria-labelledby="showExampleLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="showEncounterLabel">Find an Encounter</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="showEncounterForm">
+                        Which encounter would you like to look up?</br>
+                        <input type="number" name="encounter[id]" min="0" step="1"><br/>
+                        <button type="submit" id="show-encounter-submit">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Update Encounter-->
+            <div class="update-encounter">
+            <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#updateEncounter">
+                Update an Encounter
+              </button>
+
+              <!-- Modal Update Encounter -->
+              <div class="modal fade" id="updateEncounter" tabindex="-1" role="dialog" aria-labelledby="updateExampleLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateEncounterLabel">Update an Encounter</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div>
+                        <h6><span>* = Required Field</span></h6>
+                      </div>
+                      <form id="updateEncounterForm">
+                        Which encounter would you like to update?</br>
+                        Encounter ID: <input type="number" name="encounter[id]" min="0" step="1"><br/>
+                        <br>
+                        <h4>Updated Information:</h4>
+                        Date of the Encounter: <span class="required field">*</span> <input type="date" name="encounter[date_of_encounter]"><br/>
+                        Approximate Time of the Encounter: <span class="required field">*</span> <input type="time" name="encounter[time_of_encounter]"><br/>
+                        Location: <span class="required field">*</span> <input type="text" name="encounter[location]" placeholder="Ex: Whaley House"><br/>
+                        Weather During Encounter: <select name="encounter[weather]">
+                          <option value="Sunny">Sunny</option>
+                          <option value="Clear Sky">Clear Sky</option>
+                          <option value="Partly Cloudy">Partly Cloudy</option>
+                          <option value="Cloudy">Cloudy</option>
+                          <option value="Rainy">Rainy</option>
+                          <option value="Snowing">Snowing</option>
+                          <option value="Stormy">Stormy</option>
+                          <option value="Windy">Windy</option>
+                          <option value="Hailing">Hailing</option>
+                          <option value="Foggy">Foggy</option>
+                          <option value="Humid">Humid</option>
+                        </select> </br>
+                        Number of People: <input type="number" name="encounter[number_of_people]" min="0" step="1" placeholder="include yourself!"><br/>
+                        What You Were Wearing:<input type="text" name="encounter[wearing]" placeholder="Ex: Red shirt & jeans."><br/>
+                        <br>
+                        <h4> About the Entity: </h4>
+                        Entity Type:<span class="required field">*</span> <select name="encounter[entity_type]">
+                          <option value="Apparition">Apparition</option>
+                          <option value="Haunting Ghost">Haunting Ghost</option>
+                          <option value="Poltergeist">Poltergeist</option>
+                          <option value="Demon">Demon</option>
+                          <option value="Cryptid">Cryptid</option>
+                          <option value="Alien">Alien</option>
+                        </select><br/>
+                        Entity Name: <input type="text" name="encounter[entity_name]" placeholder="Ex: Yankee Jim"><br/>
+                        Personality: <select name="encounter[disposition]">
+                          <option value="Friendly">Friendly</option>
+                          <option value="Playful">Playful</option>
+                          <option value="Good">Good</option>
+                          <option value="Reserved">Reserved</option>
+                          <option value="Serious">Serious</option>
+                          <option value="Anxious">Anxious</option>
+                          <option value="Child-like">Child-Like</option>
+                          <option value="Violent">Violent</option>
+                          <option value="Angry">Angry</option>
+                          <option value="Flirty">Flirty</option>
+                        </select><br/>
+                        Entity Appearance:<span class="required field">*</span> <input type="text" name="encounter[appearance]" placeholder="Ex: Colonial Garb."><br/>
+                        Encounter Description:<span class="required field">*</span> <input type="text" name="encounter[encounter_description]" placeholder="Ex: Slammed Door."><br/>
+                        <br>
+                        <button type="submit" id="update-encounter-submit">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Delete Encounter-->
+            <div class="delete-encounter">
+            <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#deleteEncounter">
+                Delete an Encounter
+              </button>
+
+              <!-- Modal Delete Encounter -->
+              <div class="modal fade" id="deleteEncounter" tabindex="-1" role="dialog" aria-labelledby="deleteExampleLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteEncounterLabel">Delete an Encounter</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="deleteEncounterForm">
+                        Which encounter would you like to delete?</br>
+                        <input type="number" name="encounter[id]" min="0" step="1"><br/>
+                        <button type="submit" id="delete-encounter-submit">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Message Center-->
+            <div>
+              <div id="message-center"></div>
+            </div>
+
+          </div> <!--ends column-->
+
+          <div class="content col-12 col-lg-9">
+            <!-- Button trigger modal -->
+            <div class="create-encounter">
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#createEncounter">
+                Had an Encounter? Click here to log it now!
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="createEncounter" tabindex="-1" role="dialog" aria-labelledby="createEncounterTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="createEncounterTitle">My Encounter</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div>
+                        <h6><span>* = Required Field</span></h6>
+                      </div>
+                      <h4 class="form-title"> Encounter Setting: </h4>
+                      <form id="encounter-info">
+                        Date of the Encounter: <span class="required field">*</span> <input type="date" name="encounter[date_of_encounter]"><br/>
+                        Approximate Time of the Encounter: <span class="required field">*</span> <input type="time" name="encounter[time_of_encounter]"><br/>
+                        Location: <span class="required field">*</span> <input type="text" name="encounter[location]" placeholder="Ex: Whaley House"><br/>
+                        Weather During Encounter: <select name="encounter[weather]">
+                          <option value="Sunny">Sunny</option>
+                          <option value="Clear Sky">Clear Sky</option>
+                          <option value="Partly Cloudy">Partly Cloudy</option>
+                          <option value="Cloudy">Cloudy</option>
+                          <option value="Rainy">Rainy</option>
+                          <option value="Snowing">Snowing</option>
+                          <option value="Stormy">Stormy</option>
+                          <option value="Windy">Windy</option>
+                          <option value="Hailing">Hailing</option>
+                          <option value="Foggy">Foggy</option>
+                          <option value="Humid">Humid</option>
+                        </select> </br>
+                        Number of People: <input type="number" name="encounter[number_of_people]" min="0" step="1" placeholder="include yourself!"><br/>
+                        What You Were Wearing:<input type="text" name="encounter[wearing]" placeholder="Ex: Red shirt & jeans."><br/>
+                        <br>
+                        <h4> About the Entity: </h4>
+                        Entity Type:<span class="required field">*</span> <select name="encounter[entity_type]">
+                          <option value="Apparition">Apparition</option>
+                          <option value="Haunting Ghost">Haunting Ghost</option>
+                          <option value="Poltergeist">Poltergeist</option>
+                          <option value="Demon">Demon</option>
+                          <option value="Cryptid">Cryptid</option>
+                          <option value="Alien">Alien</option>
+                        </select><br/>
+                        Entity Name: <input type="text" name="encounter[entity_name]" placeholder="Ex: Yankee Jim"><br/>
+                        Personality: <select name="encounter[disposition]">
+                          <option value="Friendly">Friendly</option>
+                          <option value="Playful">Playful</option>
+                          <option value="Good">Good</option>
+                          <option value="Reserved">Reserved</option>
+                          <option value="Serious">Serious</option>
+                          <option value="Anxious">Anxious</option>
+                          <option value="Child-like">Child-Like</option>
+                          <option value="Violent">Violent</option>
+                          <option value="Angry">Angry</option>
+                          <option value="Flirty">Flirty</option>
+                        </select><br/>
+                        Entity Appearance:<span class="required field">*</span> <input type="text" name="encounter[appearance]" placeholder="Ex: Colonial Garb."><br/>
+                        Encounter Description:<span class="required field">*</span> <input type="text" name="encounter[encounter_description]" placeholder="Ex: Slammed Door."><br/>
+                        <br>
+                        <button type="submit" id="create-encounter-submit">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div> <!--ends modal-->
+            </div>
+            <div class="background-info">
+              <h5><a href="https://en.wikipedia.org/wiki/Ghost" target="_blank">Haunting Ghosts</a></h5>
+              <p>Also referred to as a "haunting" or a "residual haunting," this type of entity appears to be a recording of energy that replays itself over and over again. Hauntings usually exist in a location where a person or animal repeated the same task over and over during its life. Some investigators believe through repetition, a psychic imprint is left within that space and remains long after the person or animal has passed away.</p>
+
+              <h5><a href="http://publicparapsychology.blogspot.com/2009/11/apparitional-experiences-primer-on.html" target="_blank">Apparitions</a></h5>
+              <p>Unlike hauntings, apparitions appear to interact intelligently with people in the living world. Spirits may knock, open and close doors or cupboards, move objects, answer questions on voice recorders, and sometimes even interact with electronic equipment like flashlights and EMF (Electro-Magnetic Field) meters. The existing, yet unproven, one hypothesis states spirits are made up of energies of varying power levels, and they take energy out of the area around them in order to manifest those interactions.</p>
+
+              <h5><a href="https://en.wikipedia.org/wiki/Poltergeist" target="_blank">Poltergeists</a></h5>
+              <p>Poltergeist activity is the manifestation of certain types of activity that can be attributed to either apparitions or people in which objects appear to move on their own. This occurs through the use of telekinesis, which is essentially bursts of psychic energy that cause objects to move, doors to open, knocking sounds, and more.</p>
+
+              <h5><a href="https://en.wikipedia.org/wiki/Demon" target="_blank">Demons</a></h5>
+              <p>Demons are believed to be entities of pure darkness and evil commanded by Satan himself. Evidence from possessed individuals and extremely violent poltergeist cases suggest a form of violent and hateful entity certainly exists in a parallel reality. These cases involve anything from objects flying across the room to shoves and pushes from invisible forces. People have even reported being pinned down, punched, and scratched by unseen assailants.</p>
+
+              <h5><a href="https://en.wikipedia.org/wiki/List_of_cryptids" target="_blank">Cryptids</a></h5>
+              <p>Cryptids are mainly plants, animals, and other eukaryotes not recognized by the scientific community or thought to be extinct. Examples of cryptids include Bigfoot, Yetis, the Loch Ness Monster, Thunderbirds, and Pukwudgees.</p>
+
+              <h5><a href="https://en.wikipedia.org/wiki/List_of_alleged_extraterrestrial_beings" target="_blank">Aliens</a> & <a href="https://en.wikipedia.org/wiki/List_of_reported_UFO_sightings" target="_blank">UFO's</a></h5>
+              <p>More specifically extraterrestrial intelligent life and unidentified flying objects. There have been many reports of UFO sightings dating back to 1440 B.C. and alien encounters of third and fourth kind with plausible enough evidence to be investigated by multiple governments.</p></a>
+            </div>
+            <div class="resource-view">
+              <p></p>
+            </div>
+          </div> <!--ends column-->
+        </div> <!--ends row-->
+        <footer>
+          Made by Regina Scott at General Assembly, 2019
+        </footer>
+      </div> <!--ends container-->
+    </body>
+</html>
