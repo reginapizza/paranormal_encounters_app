@@ -1,4 +1,4 @@
-## **Hello, World! Welcome to my Game of Tic-Tac-Toe**.
+## **Paranormal Encounters Application**.
 ------------------------------------------------------
 
 **This application allows users to log a paranormal encounter they that will
@@ -11,6 +11,8 @@ making some up or reading through other's!**
 
 * [My SPA hosted on Github Pages](https://reginapizza.github.io/paranormal_encounters_app/)
 * [My client repository on Github](https://github.com/reginapizza/paranormal_encounters_app)
+* [My API repository on Github](https://github.com/reginapizza/Paranormal_API)
+* [My API hosted on Heroku](https://sheltered-lowlands-54306.herokuapp.com/)
 
 ### **Technologies Used:**
 * HTML
