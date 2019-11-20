@@ -27,6 +27,19 @@ const getAllEncounters = function () {
   })
 }
 
+const getMyEncounters = function () {
+  return $.ajax({
+    url: config.apiUrl + '/index_my',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+
+    }
+  })
+}
+
 const showEncounter = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/encounters/' + formData.encounter.id,
@@ -63,6 +76,7 @@ const deleteEncounter = function (formData) {
 module.exports = {
   createEncounter,
   getAllEncounters,
+  getMyEncounters,
   showEncounter,
   updateEncounter,
   deleteEncounter

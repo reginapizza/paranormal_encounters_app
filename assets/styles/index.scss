@@ -16,6 +16,10 @@ body {
   text-decoration: none;
 }
 
+button {
+  margin: 20 px;
+}
+
 footer {
   align-items: center;
   color: white;
@@ -62,6 +66,7 @@ span {
 
 .change-password,
 .sign-out,
+.get-my-encounters,
 .get-all-encounters,
 .show-encounter,
 .update-encounter,
@@ -76,6 +81,11 @@ span {
   border-radius: 12px;
   padding: 10px;
   color: white;
+}
+
+.expand-to-height-of-child {
+  display: inline-block;
+  width: 100%;
 }
 
 .modal-body {

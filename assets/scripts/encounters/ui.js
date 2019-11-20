@@ -17,6 +17,25 @@ const onCreateEncounterFailure = function (data) {
   $('#encounter-info').trigger('reset')
 }
 
+const onGetMyEncountersSuccess = function (data) {
+  data.encounters = data.encounters.map(encounter => {
+    encounter.date_of_encounter = new Date(encounter.date_of_encounter).toLocaleDateString()
+    encounter.time_of_encounter = new Date(encounter.time_of_encounter).toLocaleTimeString()
+
+    return encounter
+  })
+  $('.resource-view').empty()
+  $('.resource-view').css('display', 'block').append(getEncountersHandlebars({encounters: data.encounters}))
+  $('#message-center').text('Successfully got your Encounters').fadeIn(0, 1)
+  $('#message-center').text('Successfully got your Encounters').fadeOut(5000, 0)
+  $('.background-info').hide()
+}
+
+const onGetMyEncountersFailure = function (data) {
+  $('#message-center').text('Failed to get all Encounters. Please try again.').fadeIn(0, 1)
+  $('#message-center').text('Failed to get all Encounters. Please try again.').fadeOut(5000, 0)
+}
+
 const onGetAllEncountersSuccess = function (data) {
   data.encounters = data.encounters.map(encounter => {
     encounter.date_of_encounter = new Date(encounter.date_of_encounter).toLocaleDateString()
@@ -93,6 +112,8 @@ const onDeleteEncounterFailure = function () {
 module.exports = {
   onCreateEncounterSuccess,
   onCreateEncounterFailure,
+  onGetMyEncountersSuccess,
+  onGetMyEncountersFailure,
   onGetAllEncountersSuccess,
   onGetAllEncountersFailure,
   onShowEncounterSuccess,

@@ -12,6 +12,15 @@ const onCreateEncounter = function (event) {
     .catch(ui.onCreateEncounterFailure)
 }
 
+const onGetMyEncounters = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.getMyEncounters(formData)
+    .then(ui.onGetMyEncountersSuccess)
+    .catch(ui.onGetMyEncountersFailure)
+}
+
 const onGetAllEncounters = function (event) {
   event.preventDefault()
   const form = event.target
@@ -50,6 +59,7 @@ const onDeleteEncounter = function (event) {
 
 module.exports = {
   onCreateEncounter,
+  onGetMyEncounters,
   onGetAllEncounters,
   onShowEncounter,
   onUpdateEncounter,
